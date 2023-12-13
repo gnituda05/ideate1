@@ -1,0 +1,28 @@
+@keyframes rise {
+  from {
+    transform: translateY(90px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 10;
+  }
+}
+
+.animate-rise {
+  opacity: 0;
+  animation: rise 1s ease forwards;
+  animation-delay: 1s;
+}
+
+.delay-0 {
+  animation-delay: 1s;
+}
+
+.delay-1 {
+  animation-delay: 1.2s;
+}
+
+.delay-2 {
+  animation-delay: 1.4s;
+}

@@ -1,0 +1,44 @@
+.custom-word-spacing {
+  word-break: break-all;
+  word-spacing: 9999px; /* Large value to force break */
+}
+
+.first-panel {
+  height: 100vh; /* Full viewport height */
+}
+
+.second-panel {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: blue; /* Replace with your image */
+  transition: transform 0.5s, filter 0.5s;
+}
+
+.background.blur {
+  filter: blur(5px);
+}
+
+.center-panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  transition: transform 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.center-panel.visible {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  visibility: visible;
+}

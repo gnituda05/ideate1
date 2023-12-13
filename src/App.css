@@ -1,0 +1,82 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+.bg-image {
+  background-image: url("./images/bg.jpg") !important;
+}
+.bg-home {
+  background-image: url("./images/GifHOME.gif") !important;
+  background-repeat: no-repeat;
+  background-size: cover; /* or contain, depending on what you need */
+  background-position: center;
+}
+
+.bg-image-footer {
+  background-image: url("./images/Artboard.png") !important;
+}
+
+.bg-image-HomePage {
+  background-image: url("./images/HomePageBG.png") !important;
+}
+
+.bg-image-Mara {
+  background-image: url("./images/Mara_C.png") !important;
+}
+.bg-image-projs {
+  background-image: url("./images/projs.png") !important;
+}
+
+/* In your global CSS file */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 10s forwards;
+}
+
+.custom-size {
+  width: auto; /* Use the image's intrinsic width */
+  height: auto;
+}
