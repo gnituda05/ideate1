@@ -1,9 +1,14 @@
+import React, { useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import circle from "./icon/Component_2.png";
 import logo from "./icon/White-Dominated.png";
 import "./home.css"; // Import your Tailwind CSS file
 
-const HomePage: React.FC = () => {
+interface HomePageProps {
+  onNavigate: () => void;
+}
+
+const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   return (
     <div className="py-3 bg-home" id="home">
       <div className="flex flex-row mt-10 mb-10 mx-auto max-w-screen-lg gap-72">
@@ -28,6 +33,7 @@ const HomePage: React.FC = () => {
           <div className="group">
             <button
               type="submit"
+              onClick={onNavigate}
               className="flex p-5 w-64 h-20 rounded-2xl bg-blue-600 text-white duration-500 transform group-hover:bg-lime-400 gap-2 group-hover:text-black group-hover:w-72  "
             >
               <p className="ms-10  mt-1 text-xl font-semibold duration-500 transform group-hover:ms-14  ">

@@ -9,7 +9,11 @@ import projs from "./icons/PROJS (1).png";
 import { MdArrowOutward } from "react-icons/md";
 // import "./project.css"; // Make sure to import your CSS
 
-const BGS: React.FC = () => {
+interface BGSProps {
+  onNavigate: () => void;
+}
+
+const BGS: React.FC<BGSProps> = ({ onNavigate }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [showBackground, setShowBackground] = useState(false);
   const [hover, setHover] = useState(false);
@@ -95,8 +99,8 @@ const BGS: React.FC = () => {
 
   return (
     <div className={`bg-gray-900  screen `} id="works">
-      <div className="flex flex-col mx-auto max-w-screen-xl gap-6 overflow-hidden ">
-        <div className="relative h-screen mb-16  ">
+      <div className="flex flex-col mx-auto max-w-screen-xl gap-6 overflow-hidden">
+        <div className="relative h-screen mb-32 mt-2 ">
           <div
             className={`absolute inset-0 transition-all duration-1000 ms-5 me-5 ${
               scrollPosition > popUpStart ? "blur-lg" : ""
@@ -306,6 +310,7 @@ const BGS: React.FC = () => {
               <div className="group">
                 <button
                   type="submit"
+                  onClick={onNavigate}
                   className=" flex p-5 w-44 h-16 gap-2 duration-500 transform rounded-full mt-10 bg-blue-600 text-white group-hover:bg-lime-400 group-hover:text-black group-hover:w-52 "
                 >
                   <p className="text-center ms-2 font-bold duration-500 transform group-hover:ms-7 ">

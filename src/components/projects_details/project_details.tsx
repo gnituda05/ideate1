@@ -7,7 +7,7 @@ import Renegades from "./icons/Renegades.png";
 const Proj_Details = () => {
   const [hover, setHover] = useState(false);
   return (
-    <div className="py-3 bg-gray-900 ">
+    <div className="py-3 bg-gray-900  ">
       <div className="flex flex-col mx-auto max-w-screen-lg gap-6 mt-16 mb-32 ">
         <div className="flex flex-col ms-11 mt-14 ">
           <div className="flex flex-row justify-between">

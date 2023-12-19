@@ -1,8 +1,14 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import { MdArrowOutward } from "react-icons/md";
 import ideate from "./icons/ideate.png";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  isShrunk: boolean;
+  onNavigate1: (target: string) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onNavigate1 }) => {
+  const [isShrunk, setIsShrunk] = useState(false);
   const smoothScroll = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -10,24 +16,43 @@ const Header: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsShrunk(currentScrollY > window.innerHeight); // Change threshold as needed
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div
       className="
-    fixed top-0 left-1/2 mt-6 rounded-xl transform -translate-x-1/2 z-10 
-     bg-zinc-900"
+  fixed top-0 left-1/2 mt-6 rounded-xl transform -translate-x-1/2 z-10 
+   bg-zinc-900"
     >
-      <nav className="flex justify-between items-center p-4">
-        <div className="flex flex-row justify-between gap-x-80 ">
-          <div className="ms-10  text-white text-4xl font-bold">
+      <nav className="flex items-center ">
+        <div className="flex flex-row">
+          <div className="ms-10 text-white text-4xl font-bold">
             {" "}
             <img
               src={ideate}
-              className="h-auto max-w-max"
+              className="mt-4 h-auto max-w-max"
               alt="image description"
             />
           </div>
 
-          <div className="flex mt-0.5 gap-9 me-10">
+          <div
+            className={`flex ${
+              isShrunk
+                ? "p-4 transform  mt-0.5 ms-28 gap-0 duration-500 opacity-0  "
+                : " transform p-4 mt-0.5 ms-52 gap-9 me-5 duration-500 opacity-100"
+            }`}
+          >
             <li className="list-none">
               <a
                 href="#home"
@@ -35,6 +60,7 @@ const Header: React.FC = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   smoothScroll("home");
+                  onNavigate1("home");
                 }}
               >
                 HOME
@@ -48,6 +74,7 @@ const Header: React.FC = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   smoothScroll("works");
+                  onNavigate1("works");
                 }}
               >
                 WORKS
@@ -60,11 +87,36 @@ const Header: React.FC = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   smoothScroll("iteam");
+                  onNavigate1("iteam");
                 }}
               >
                 TEAM
               </a>
             </li>
+          </div>
+
+          <div
+            className={` absolute group   ${
+              isShrunk
+                ? "transform ms-52 mt-2.5 gap-0 duration-100 opacity-100"
+                : "p-4  duration-100 opacity-0"
+            }
+            `}
+          >
+            <button
+              type="submit"
+              className="flex h-10 w-36 rounded-full bg-blue-600 text-white duration-500 transform group-hover:bg-lime-400 group-hover:text-black group-hover:w-40 "
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate1("ContactUs");
+              }}
+            >
+              <p className="text-center mt-2 ms-5 font-bold  duration-500 transform group-hover:ms-7  ">
+                {" "}
+                work with us
+              </p>
+              <MdArrowOutward className="ms-1 h-5 mt-2.5" />
+            </button>
           </div>
         </div>
       </nav>

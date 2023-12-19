@@ -42,7 +42,7 @@ const ContactForm = () => {
   // JSX remains the same
   return (
     <div className="py-10 bg-image text-white">
-      <div className="flex flex-col mx-auto max-w-screen-lg gap-6 mb-16 ">
+      <div className="flex flex-col mx-auto max-w-screen-lg gap-6 mb-16 mt-16 ">
         <div className="w-full mb-1">
           <p className="text-sm font-semibold">SAY HELLO</p>
           <h2 className="text-4xl font-extrabold">CONTACT US</h2>

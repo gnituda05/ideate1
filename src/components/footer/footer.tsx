@@ -7,14 +7,18 @@ import { MdArrowOutward } from "react-icons/md";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
+interface FooterProps {
+  onNavigate: () => void;
+}
+
 // import { ReactComponent as InstagramIcon } from "./icons/instagram.svg";
 //import { ReactComponent as LinkedInIcon } from "./icons/linkedin.svg";
 // const constraintsRef = useRef(null);
-const Footer = () => {
+const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <div className="py-3 bg-image-footer ">
-      <div className="flex flex-col mx-auto max-w-screen-lg gap-6">
-        <div className=" flex flex-col">
+      <div className="flex flex-col mx-auto max-w-screen-lg gap-6 ">
+        <div className=" flex flex-col ">
           <h1 className="text-7xl font-extrabold text-slate-900">
             LETS MAKE YOUR
           </h1>
@@ -30,6 +34,7 @@ const Footer = () => {
             <div className="group">
               <button
                 type="submit"
+                onClick={onNavigate}
                 className="flex p-5 w-44 h-16 gap-2 duration-500 transform rounded-full mt-3 bg-blue-600 text-white group-hover:bg-lime-400 group-hover:text-black group-hover:w-48 "
               >
                 <p className="text-center ms-2 font-bold duration-500 transform group-hover:ms-4  ">
