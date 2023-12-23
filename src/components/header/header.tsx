@@ -9,6 +9,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onNavigate1 }) => {
   const [isShrunk, setIsShrunk] = useState(false);
+
   const smoothScroll = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -19,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate1 }) => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      setIsShrunk(currentScrollY > window.innerHeight); // Change threshold as needed
+      setIsShrunk(currentScrollY > window.innerHeight / 2); // Change threshold as needed
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -32,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate1 }) => {
   return (
     <div
       className="
-  fixed top-0 left-1/2 mt-6 rounded-xl transform -translate-x-1/2 z-10 
+  fixed ms-0 sm:top-0 sm:left-1/2 sm:mt-6 sm:rounded-full sm:transform sm:-translate-x-1/2 sm:z-10 
    bg-zinc-900"
     >
       <nav className="flex items-center ">
@@ -43,6 +44,11 @@ const Header: React.FC<HeaderProps> = ({ onNavigate1 }) => {
               src={ideate}
               className="mt-4 h-auto max-w-max"
               alt="image description"
+              onClick={(e) => {
+                e.preventDefault();
+                smoothScroll("home");
+                onNavigate1("home");
+              }}
             />
           </div>
 
@@ -99,19 +105,19 @@ const Header: React.FC<HeaderProps> = ({ onNavigate1 }) => {
             className={` absolute group   ${
               isShrunk
                 ? "transform ms-52 mt-2.5 gap-0 duration-100 opacity-100"
-                : "p-4  duration-100 opacity-0"
+                : "p-4 duration-100 opacity-0"
             }
             `}
           >
             <button
               type="submit"
-              className="flex h-10 w-36 rounded-full bg-blue-600 text-white duration-500 transform group-hover:bg-lime-400 group-hover:text-black group-hover:w-40 "
+              className="flex h-10 w-36 ms-2 rounded-full bg-blue-600 text-white duration-500 transform group-hover:bg-lime-400 group-hover:text-black group-hover:w-40 group-hover:ms-0 "
               onClick={(e) => {
                 e.preventDefault();
-                onNavigate1("ContactUs");
+                isShrunk ? onNavigate1("ContactUs") : onNavigate1("home");
               }}
             >
-              <p className="text-center mt-2 ms-5 font-bold  duration-500 transform group-hover:ms-7  ">
+              <p className="text-center mt-2 ms-4 font-bold  duration-500 transform group-hover:ms-6  ">
                 {" "}
                 work with us
               </p>

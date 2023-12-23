@@ -11,10 +11,10 @@ interface HomePageProps {
 const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   return (
     <div className="py-3 bg-home" id="home">
-      <div className="flex flex-row mt-10 mb-10 mx-auto max-w-screen-lg gap-72">
+      <div className="flex flex-row lg:mt-32 lg:mb-64 lg:mx-auto lg:max-w-screen-xl lg:gap-72 sm:gap-0 sm:max-w-screen-md">
         <div className="flex flex-col mb-20">
           <div className="mt-36 mb-9 ">
-            <h1 className="text-9xl font-extrabold  text-white animate-rise delay-0">
+            <h1 className="text-9xl font-extrabold text-white animate-rise delay-0">
               THINK
             </h1>
             {/* <img
@@ -34,27 +34,27 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             <button
               type="submit"
               onClick={onNavigate}
-              className="flex p-5 w-64 h-20 rounded-2xl bg-blue-600 text-white duration-500 transform group-hover:bg-lime-400 gap-2 group-hover:text-black group-hover:w-72  "
+              className="flex p-5 w-64 h-20 ms-3 rounded-2xl bg-blue-600 text-white duration-500 transform group-hover:bg-lime-400 gap-2 group-hover:text-black group-hover:w-72 group-hover:ms-0  "
             >
-              <p className="ms-10  mt-1 text-xl font-semibold duration-500 transform group-hover:ms-14  ">
+              <p className="ms-11  mt-1 text-xl font-semibold duration-500 transform group-hover:ms-12 group-hover:text-2xl ">
                 {" "}
                 work with us
               </p>
-              <MdArrowOutward className="h-9 w-6 duration-500 transform group-hover:text-black" />
+              <MdArrowOutward className="h-9 w-6 duration-500 transform group-hover:text-black group-hover:h-10" />
             </button>
           </div>
         </div>
-        <div className="flex items-center mb-72">
+        <div className="flex items-center mb-72 ms-24">
           <div className="relative  ">
             <img
               src={circle}
               alt="Rotating Circle"
-              className=" h-52 rounded-full animate-spin-slow"
+              className=" lg:h-full  rounded-full animate-spin-slow"
             />
             <img
               src={logo}
               alt="Static Icon"
-              className="h-14 w-14 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  "
+              className="sm:h-4 lg:h-14 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2   "
             />
           </div>
         </div>

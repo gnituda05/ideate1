@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent, FormEvent } from "react";
 import logo from "./icons/Black-Dominated.png";
 import { motion } from "framer-motion";
 import { MdArrowOutward } from "react-icons/md";
+import axios from "axios";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -20,28 +21,34 @@ const ContactForm = () => {
       ...prevData,
       [name]: value,
     }));
+    console.log(`Field updated - ${name}: ${value}`); // Debug: log updated field value
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const submitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle the form submission
-    // console.log(formData);
+    console.log("Form submission initiated", formData);
 
-    // const response = await fetch('http://glenn.com:5000/contact', {
-    //   method: 'POST',
-    //   body: JSON.stringify(formData)
-    // })
-
-    // if(response.status === 200) {
-    //   console.log('successfully added!')
-    // } else {
-    //   console.log('errror')
-    // }
+    try {
+      const response = await axios.post(
+        "https://contact-ccy0.onrender.com/contact/submit",
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log("Form submission successful", response.data);
+      // Optionally, reset form or show success message here
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      // Optionally, handle error (e.g., show error message to user)
+    }
   };
 
   // JSX remains the same
   return (
-    <div className="py-10 bg-image text-white">
+    <div className="py-10 bg-gray-950  text-white">
       <div className="flex flex-col mx-auto max-w-screen-lg gap-6 mb-16 mt-16 ">
         <div className="w-full mb-1">
           <p className="text-sm font-semibold">SAY HELLO</p>
@@ -82,7 +89,7 @@ const ContactForm = () => {
           <h2 className="text-4xl font-extrabold">SEND US A MESSAGE</h2>
         </div>
 
-        <form className="flex-col">
+        <form className="flex-col" onSubmit={submitForm}>
           <div className="flex flex-col lg:flex-row gap-8">
             <input
               name="name"
@@ -143,7 +150,7 @@ const ContactForm = () => {
           <div className="group w-min">
             <button
               type="submit"
-              className=" flex p-5 w-48 h-16 gap-2 duration-500 transform rounded-full mt-3 bg-blue-600 text-white  group-hover:bg-lime-400 group-hover:text-black group-hover:w-56 "
+              className=" flex p-5 w-48 h-16 ms-3 gap-2 duration-500 transform rounded-full mt-3 bg-blue-600 text-white  group-hover:bg-lime-400 group-hover:text-black group-hover:w-56 group-hover:ms-0 "
             >
               <p className="text ms-2 font-bold duration-500 group-hover:ms-7 ">
                 {" "}

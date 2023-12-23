@@ -22,7 +22,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <h1 className="text-7xl font-extrabold text-slate-900">
             LETS MAKE YOUR
           </h1>
-          <div className="flex flex-row justify-between ">
+          <div className="flex flex-col sm:flex-row justify-between ">
             <div className="flex flex-row gap-4">
               <h1 className="text-7xl font-extrabold text- text-blue-600">
                 IDEAS
@@ -35,9 +35,9 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <button
                 type="submit"
                 onClick={onNavigate}
-                className="flex p-5 w-44 h-16 gap-2 duration-500 transform rounded-full mt-3 bg-blue-600 text-white group-hover:bg-lime-400 group-hover:text-black group-hover:w-48 "
+                className="flex p-5 w-44 h-16 gap-2 duration-500 transform rounded-full mt-3 me-3 bg-blue-600 text-white group-hover:bg-lime-400 group-hover:text-black group-hover:w-48 group-hover:me-0 "
               >
-                <p className="text-center ms-2 font-bold duration-500 transform group-hover:ms-4  ">
+                <p className="text-center ms-2 font-bold duration-500 transform group-hover:ms-5   ">
                   {" "}
                   work with us
                 </p>

@@ -42,3 +42,8 @@
   opacity: 1;
   visibility: visible;
 }
+
+.center-panel_1 {
+  transform: translateY(-50%);
+  bottom: 50%;
+}

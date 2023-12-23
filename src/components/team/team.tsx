@@ -10,16 +10,16 @@ import glenn from "./icons/Glenn.png";
 const ITeam = () => {
   const [hover, setHover] = useState(false);
   return (
-    <div className="py-3 bg-gray-900 " id="iteam">
+    <div className="py-3 bg-gray-950 " id="iteam">
       <div className="flex flex-col mx-auto max-w-screen-lg gap-6 mt-20 mb-32">
         <div className="flex flex-row justify-between">
-          <img src={logo} alt="Logo" className="h-32 ms-4  " />
-          <h2 className="text-8xl text-left font-bold text-white">
+          <img src={logo} alt="Logo" className="h-24  " />
+          <h2 className="text-8xl text-left font-extrabold text-white">
             WE ARE IDEATE
           </h2>
         </div>
 
-        <div className="flex flex-col gap-1 mt-5">
+        <div className="flex flex-col gap-1 ">
           <p className="text-lg text-right text-white">
             Get to know the talented inidviduals who make up our dynamic team.
             Each team member <br></br> brings a unique set of skills and

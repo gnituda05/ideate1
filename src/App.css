@@ -84,3 +84,25 @@
 .navbar-transition {
   transition: padding 0.3s ease-in-out, other-properties 0.3s ease-in-out;
 }
+
+/* Customize the scrollbar - total width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Customize the scrollbar track (background) */
+::-webkit-scrollbar-track {
+  background: #4b4b4b;
+  border-radius: 10px; /* Rounded background */
+}
+
+/* Customize the scrollbar thumb (the moving part) */
+::-webkit-scrollbar-thumb {
+  background: #3b8b27;
+  border-radius: 10px; /* Rounded thumb */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #149c31;
+}
