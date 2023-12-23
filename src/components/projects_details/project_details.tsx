@@ -1,6 +1,6 @@
 import { MdArrowOutward } from "react-icons/md";
 import React, { useState } from "react";
-import Mara from "./icons/Mara_c.png";
+import Mara from "./icons/Marac.png";
 import Daily from "./icons/Daily.png";
 import Renegades from "./icons/Renegades.png";
 
@@ -21,9 +21,7 @@ const Proj_Details = () => {
               <p className="text-7xl text-left font-bold text-blue-600 ">
                 TECH
               </p>
-              <h2 className="text-7xl  text-left font-bold text-lime-400 ">
-                .
-              </h2>
+              <h2 className="text-7xl text-left font-bold text-lime-400 ">.</h2>
             </div>
           </div>
           <div className="flex flex-col gap-1 mt-7">
