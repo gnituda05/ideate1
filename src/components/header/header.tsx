@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { MdArrowOutward } from "react-icons/md";
+import { MdArrowOutward, MdMenu } from "react-icons/md";
 import ideate from "./icons/ideate.png";
 
 interface HeaderProps {
@@ -9,6 +9,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onNavigate1 }) => {
   const [isShrunk, setIsShrunk] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
 
   const smoothScroll = (id: string) => {
     const element = document.getElementById(id);
@@ -16,6 +17,17 @@ const Header: React.FC<HeaderProps> = ({ onNavigate1 }) => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 640);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,12 +41,18 @@ const Header: React.FC<HeaderProps> = ({ onNavigate1 }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const handleNavigate = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
+    e.preventDefault();
+    smoothScroll(target);
+    onNavigate1(target);
+};
+
 
   return (
     <div
       className="
-  fixed ms-0 sm:top-0 sm:left-1/2 sm:mt-6 sm:rounded-full sm:transform sm:-translate-x-1/2 sm:z-10 
-   bg-zinc-900"
+  fixed ms-0 top-0 left-1/2 mt-6 rounded-full transform -translate-x-1/2 z-10 
+   bg-zinc-900 lg:hidden "
     >
       <nav className="flex items-center ">
         <div className="flex flex-row">
@@ -52,6 +70,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate1 }) => {
             />
           </div>
 
+        
           <div
             className={`flex ${
               isShrunk
@@ -125,6 +144,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate1 }) => {
             </button>
           </div>
         </div>
+        
       </nav>
     </div>
   );

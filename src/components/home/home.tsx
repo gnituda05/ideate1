@@ -11,10 +11,20 @@ interface HomePageProps {
 const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   return (
     <div className="py-3 bg-home" id="home">
-      <div className="flex flex-row lg:mt-32 lg:mb-64 lg:mx-auto lg:max-w-screen-xl lg:gap-72 sm:gap-0 sm:max-w-screen-md">
-        <div className="flex flex-col mb-20">
-          <div className="mt-36 mb-9 ">
-            <h1 className="text-9xl font-extrabold text-white animate-rise delay-0">
+     
+      <div className="flex flex-col mb-44 mx-auto gap-48 max-w-screen-sm ">
+      <img
+              src={logo}
+              alt="Static Icon"
+              className=" w-20 mt-10 ms-10 lg:hidden  "
+            />
+        <div className="flex flex-row gap-">
+        <div className="flex flex-col ">
+        
+          <div className="flex flex-col ms-10 mb-10   ">
+
+          
+            <h1 className="text-7xl font-general-sans font-hbold text-white animate-rise delay-0 mb-0">
               THINK
             </h1>
             {/* <img
@@ -23,41 +33,44 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 className="w-48 h-48 object-cover"
               /> */}
 
-            <h1 className="text-9xl font-extrabold text-white animate-rise delay-1">
+            <h1 className="text-7xl font-hbold text-white animate-rise delay-1 my-0">
               BUILD
             </h1>
-            <h1 className="text-9xl font-extrabold text-white animate-rise delay-2">
+            <h1 className="text-7xl font-hbold text-white animate-rise delay-2 mt-0">
               DELIVER
             </h1>
           </div>
-          <div className="group">
+          <div className="flex-row group ms-12 ">
             <button
               type="submit"
               onClick={onNavigate}
-              className="flex p-5 w-64 h-20 ms-3 rounded-2xl bg-blue-600 text-white duration-500 transform group-hover:bg-lime-400 gap-2 group-hover:text-black group-hover:w-72 group-hover:ms-0  "
+              className=" p-3 w-40 h-12 rounded-2xl bg-blue-600 text-white   "
             >
-              <p className="ms-11  mt-1 text-xl font-semibold duration-500 transform group-hover:ms-12 group-hover:text-2xl ">
+              <p className="flex ms-2 items-center text-base font-semibold  ">
                 {" "}
-                work with us
+                work with us<span className="mr-3"></span> <MdArrowOutward  />
+                
               </p>
-              <MdArrowOutward className="h-9 w-6 duration-500 transform group-hover:text-black group-hover:h-10" />
+             
             </button>
           </div>
         </div>
-        <div className="flex items-center mb-72 ms-24">
-          <div className="relative  ">
+        <div className="hidden lg:flex items-center   ">
+          <div className="relative   ">
             <img
               src={circle}
-              alt="Rotating Circle"
-              className=" lg:h-full  rounded-full animate-spin-slow"
+              alt="Rotating Circle "
+              className=" h-full  rounded-full animate-spin-slow "
             />
             <img
               src={logo}
               alt="Static Icon"
-              className="sm:h-4 lg:h-14 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2   "
+              className="sm:h-4 h-14 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2   "
             />
           </div>
         </div>
+        </div>
+        
       </div>
     </div>
   );

@@ -51,7 +51,7 @@ function App() {
   const renderFooter = () => <Footer onNavigate={navigateToContactUs} />;
   return (
     <div className="App">
-      <Header isShrunk={isHeaderShrunk} onNavigate1={onNavigate1} />
+      {/* <Header isShrunk={isHeaderShrunk} onNavigate1={onNavigate1} /> */}
       {currentPage === "Home" && (
         <>
           <HomePage onNavigate={navigateToContactUs} />
@@ -59,10 +59,10 @@ function App() {
           <BGS onNavigate={navigateToProjDetails} />
           {/* <Proj_Details /> */}
           <ITeam />
-          {/* <ContactForm /> */}
+        
           {renderParallexxx()}
-          {/* {renderFooter()} */}
-          <Footer onNavigate={navigateToContactUs} />
+          {renderFooter()}
+         
         </>
       )}
       {currentPage === "ContactUs" && (
