@@ -26,7 +26,7 @@ const Proj_Details: React.FC<ContactUseProps> = ({
 		setMenuOpen((prevState) => !prevState);
 	};
 	return (
-		<div className="py-3  bg-gray-900 px-4  ">
+		<div className="py-3 bg-gray-900 px-4  ">
 			<div className="flex flex-col mx-auto max-w-screen-xl gap-6 mb-32 ">
 				<div className="flex justify-end">
 					<MdMenu

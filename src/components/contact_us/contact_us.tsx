@@ -67,7 +67,7 @@ const ContactForm: React.FC<ContactUseProps> = ({
 	};
 	// JSX remains the same
 	return (
-		<div className="py-10 px-3 bg-gray-950  text-white">
+		<div className="py-10 px-5 bg-gray-950  text-white">
 			<div className="flex flex-col mx-auto max-w-screen-lg gap-6 mb-16 ">
 				<div className="flex justify-end">
 					<MdMenu
