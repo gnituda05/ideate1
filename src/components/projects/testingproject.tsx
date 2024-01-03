@@ -105,7 +105,7 @@ const BGS: React.FC<BGSProps> = ({ onNavigate }) => {
 	return (
 		<div className={`bg-gray-950  screen px-5 `} id="works">
 			<div className="flex flex-col mx-auto max-w-screen-xl gap-5  overflow-hidden">
-				<div className="relative h-screen mb-96 lg:mt-10 xl:mt-10 ">
+				<div className="relative h-screen mb-96 xl:mb-52 lg:mt-10 xl:mt-1 ">
 					<div
 						className={`absolute inset-0 transition-all duration-1000 ms-5 me-5 ${
 							scrollPosition > popUpStart ? "bg-black opacity-30 blur-lg" : ""
