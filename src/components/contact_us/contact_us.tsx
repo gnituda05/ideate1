@@ -67,8 +67,8 @@ const ContactForm: React.FC<ContactUseProps> = ({
 	};
 	// JSX remains the same
 	return (
-		<div className="py-10 px-5 bg-gray-950  text-white">
-			<div className="flex flex-col mx-auto max-w-screen-lg gap-6 mb-16 ">
+		<div className="py-10 px-5 bg-contact-bg  text-white">
+			<div className="flex flex-col mx-auto max-w-screen-lg gap-6 mb-16 lg:mt-10 ">
 				<div className="flex justify-end">
 					<MdMenu
 						className="text-white text-5xl cursor-pointer lg:hidden"
@@ -186,16 +186,21 @@ const ContactForm: React.FC<ContactUseProps> = ({
 						/>
 					</div>
 
-					<div className="flex mt-3 lg:flex-row gap-8">
+					<div className="flex mt-3 lg:flex-row gap-3">
 						<div className="w-full p-3 border rounded-full text-white">
 							<select
 								name="service"
 								required
-								className=" placeholder-white  w-full bg-transparent rounded-full border-none outline-none "
+								className=" placeholder-transparent w-full bg-transparent rounded-full border-none outline-none "
 								onChange={handleChange}
 							>
-								<option className="bg-transparent">Services</option>
-								<option className="text-black" value="web-design">
+								<option disabled selected>
+									Services
+								</option>
+								<option
+									className="text-black cursor-pointer hover:bg-gray-300"
+									value="web-design"
+								>
 									Web Design
 								</option>
 								<option className="text-black" value="seo">

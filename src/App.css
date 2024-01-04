@@ -61,6 +61,12 @@
 .bg-image-projs {
   background-image: url("./images/projs.png") !important;
 }
+.bg-contact-bg {
+  background-image: url("./images/contact_BG.png") !important;
+}
+.bg-works-bg {
+  background-image: url("./images/WorksBG.png") !important;
+}
 
 /* In your global CSS file */
 @keyframes slideIn {
@@ -106,3 +112,5 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #149c31;
 }
+
+

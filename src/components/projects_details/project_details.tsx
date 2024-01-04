@@ -26,8 +26,8 @@ const Proj_Details: React.FC<ContactUseProps> = ({
 		setMenuOpen((prevState) => !prevState);
 	};
 	return (
-		<div className="py-3 bg-gray-900 px-4  ">
-			<div className="flex flex-col mx-auto max-w-screen-xl gap-6 mb-32 ">
+		<div className="py-3 bg-works-bg  px-4  ">
+			<div className="flex flex-col mx-auto max-w-screen-xl gap-6 mb-32 lg:mt-20 ">
 				<div className="flex justify-end">
 					<MdMenu
 						className="text-white text-5xl cursor-pointer mt-7 me-1 lg:hidden"
@@ -86,21 +86,25 @@ const Proj_Details: React.FC<ContactUseProps> = ({
 				)}
 				<div className="flex flex-col mt-0 ">
 					<div className="flex flex-row justify-between">
-						<h2 className="text-5xl text-left font-bold text-white ">
+						<h2 className="text-5xl lg:text-7xl text-left font-bold text-white ">
 							WHERE DESIGN
 						</h2>
 					</div>
 					<div className="flex flex-row gap-5 ">
-						<h2 className="text-5xl txt-left font-bold text-white ">MEETS</h2>
+						<h2 className="text-5xl lg:text-7xl txt-left font-bold text-white ">
+							MEETS
+						</h2>
 						<div className="flex flex-row">
-							<p className="text-5xl text-left font-bold text-blue-600 ">
+							<p className="text-5xl lg:text-7xl text-left font-bold text-blue-600 ">
 								TECH
 							</p>
-							<h2 className="text-5xl text-left font-bold text-lime-400 ">.</h2>
+							<h2 className="text-5xl lg:text-7xl text-left font-bold text-lime-400 ">
+								.
+							</h2>
 						</div>
 					</div>
 					<div className="flex flex-col gap-1 p-8 ">
-						<p className="text-sm text-left text-white">
+						<p className="text-sm lg:text-xl text-left text-white">
 							At the crossroads of innovation and imagination. We craft
 							solutions that blend creativity and technology seamlessly,
 							delivering experiences that redefine what's possible. Join us in
@@ -109,7 +113,7 @@ const Proj_Details: React.FC<ContactUseProps> = ({
 					</div>
 				</div>
 
-				<div className=" flex flex-col gap-9 px-8  items-center">
+				<div className=" flex flex-col lg:flex-row gap-9 px-8  items-center">
 					{/* <!-- Individual box --> */}
 
 					<div

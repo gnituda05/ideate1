@@ -50,7 +50,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate1, onNavigate }) => {
 					<img
 						src={logo}
 						alt="Static Icon"
-						className=" w-20 ms-10 lg:hidden mb-56 "
+						className=" w-20 ms-5 sm:ms-10 lg:hidden mb-24 "
 					/>
 				</div>
 
@@ -106,7 +106,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate1, onNavigate }) => {
 				)}
 				<div className="flex flex-row justify-between lg:mt-20">
 					<div className="flex flex-col mt-20">
-						<div className="flex flex-col ms-10 mb-10   ">
+						<div className="flex flex-col ms-5 sm:ms-10 mb-10   ">
 							<h1 className="text-7xl font-bold lg:text-9xl lg:font-extrabold custom-heading px-0 font-general-sans text-white animate-rise delay-0 mb-0">
 								THINK
 							</h1>
@@ -123,7 +123,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate1, onNavigate }) => {
 								DELIVER
 							</h1>
 						</div>
-						<div className="flex-row group ms-12 ">
+						<div className="flex-row group ms-8 sm:ms-12 ">
 							<button
 								type="submit"
 								onClick={onNavigate}

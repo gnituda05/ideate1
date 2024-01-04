@@ -11,7 +11,7 @@ import nathan from "./icons/Nathan.png";
 const ITeam = () => {
 	const [hover, setHover] = useState(false);
 	return (
-		<div className="py-3 bg-gray-950 " id="iteam">
+		<div className="py-3 bg-zinc-950 " id="iteam">
 			<div className="flex flex-col mx-auto max-w-screen-lg gap-2 xl:gap-2 mt-20 mb-32">
 				<div className="flex flex-col items-center">
 					<img src={logo} alt="Logo" className="w-10 lg:w-16 xl:w-20" />
