@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        short: { raw: "(max-height: 700px)" },
+        "max-h-700": { raw: "(max-height: 700px)" },
+        "min-h-700": { raw: "(min-height: 700px)" },
         // Add more custom breakpoints as needed
       },
       keyframes: {
