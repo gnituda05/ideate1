@@ -3,6 +3,10 @@ module.exports = {
   content: ["./src/**/*.{html,tsx}"],
   theme: {
     extend: {
+      screens: {
+        short: { raw: "(max-height: 700px)" },
+        // Add more custom breakpoints as needed
+      },
       keyframes: {
         slideIn: {
           "0%": { transform: "translateX(100%)" },

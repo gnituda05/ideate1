@@ -20,7 +20,7 @@
   right: 0;
   bottom: 0;
   background: blue; /* Replace with your image */
-  /* transition: transform 0.5s, filter 0.5s; */ 
+  /* transition: transform 0.5s, filter 0.5s; */
 }
 
 .background.blur {
@@ -50,4 +50,15 @@
 
 .custom-heading1 {
   line-height: 1.2; /* Adjust line-height as needed */
+}
+
+.grid-container {
+  display: grid;
+  place-items: center; /* Aligns content in the center */
+  height: 100vh; /* Full viewport height */
+}
+
+.content {
+  height: 200px; /* Fixed height of your component */
+  /* Other styles for your component */
 }
