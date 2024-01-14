@@ -58,6 +58,13 @@
   height: 100vh; /* Full viewport height */
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Aligns vertically center */
+  height: 100vh; /* Full viewport height */
+}
+
 .content {
   height: 200px; /* Fixed height of your component */
   /* Other styles for your component */
