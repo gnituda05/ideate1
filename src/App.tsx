@@ -1,8 +1,11 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ContactForm from "./components/contact_us/contact_us";
 import Footer from "./components/footer/footer";
 import Header from "./components/header/header";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { useLocation } from "react-router-dom";
+import { ReactQueryDevtools } from "react-query-devtools";
 
 import HomePage from "./components/home/home";
 import Parallexxx from "./components/parallex/parallex";
@@ -14,94 +17,105 @@ import BGS from "./components/projects/testingproject";
 import Proj_Details from "./components/projects_details/project_details";
 import ITeam from "./components/team/team";
 
+// function useScrollToTop() {
+//   const location = useLocation();
+
+//   useEffect(() => {
+//     window.scrollTo(0, 0);
+//   }, [location]);
+// }
+
 function App() {
-	const [currentPage, setCurrentPage] = useState("Home");
-	const isHeaderShrunk = currentPage !== "Home";
+  //   useScrollToTop();
+  const [currentPage, setCurrentPage] = useState("Home");
+  const isHeaderShrunk = currentPage !== "Home";
+  const queryClient = new QueryClient();
 
-	const smoothScroll = (id: string) => {
-		const element = document.getElementById(id);
-		if (element) {
-			element.scrollIntoView({ behavior: "smooth" });
-		}
-	};
+  const smoothScroll = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
-	const onNavigate1 = (target: string) => {
-		if (target === "ContactUs") {
-			setCurrentPage("ContactUs");
-		} else {
-			// This is for scrolling to sections within the HomePage
-			setCurrentPage("Home");
-			setTimeout(() => {
-				const element = document.getElementById(target);
-				if (element) {
-					element.scrollIntoView({ behavior: "smooth" });
-				}
-			}, 0);
-		}
-	};
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
 
-	const navigateToContactUs = () => {
-		setCurrentPage("ContactUs");
-	};
-	const navigateToProjDetails = () => {
-		setCurrentPage("ProjDetails");
-	};
+  const onNavigate1 = (target: string) => {
+    if (target === "ContactUs") {
+      setCurrentPage("ContactUs");
+    } else {
+      // This is for scrolling to sections within the HomePage
+      setCurrentPage("Home");
+      setTimeout(() => {
+        const element = document.getElementById(target);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 0);
+    }
+  };
 
-	const renderParallexxx = () => <Parallexxx />;
-	const renderFooter = () => <Footer onNavigate={navigateToContactUs} />;
-	return (
-		<div className="App">
-			<Header isShrunk={isHeaderShrunk} onNavigate1={onNavigate1} />
-			{currentPage === "Home" && (
-				<>
-					<HomePage
-						onNavigate1={onNavigate1}
-						onNavigate={navigateToContactUs}
-					/>
+  const navigateToContactUs = () => {
+    setCurrentPage("ContactUs");
+  };
+  const navigateToProjDetails = () => {
+    setCurrentPage("ProjDetails");
+  };
 
-					{/* Other components */}
-					<BGS onNavigate={navigateToProjDetails} />
-					{/* <Proj_Details /> */}
-					<ITeam />
+  return (
+    <>
+      <QueryClientProvider client={queryClient}>
+        <div className="App">
+          <Header currentPage={currentPage} onNavigate1={onNavigate1} />
+          {currentPage === "Home" && (
+            <>
+              <HomePage
+                onNavigate1={onNavigate1}
+                onNavigate={navigateToContactUs}
+              />
 
-					{renderParallexxx()}
-					{renderFooter()}
-				</>
-			)}
-			{currentPage === "ContactUs" && (
-				<>
-					<ContactForm
-						onNavigate1={onNavigate1}
-						onNavigate={navigateToContactUs}
-					/>
-					{renderParallexxx()}
-					{renderFooter()}
-				</>
-			)}
-			{currentPage === "ProjDetails" && (
-				<>
-					<Proj_Details
-						onNavigate1={onNavigate1}
-						onNavigate={navigateToContactUs}
-					/>
-					{renderParallexxx()}
-					{renderFooter()}
-				</>
-			)}
-		</div>
-
-		// <Router>
-		//   <div className="App">
-		//     <Header  isShrunk={isHeaderShrunk} />
-		//     <Routes>
-		//       <Route path="/home" element={<HomePage />} />
-		//       <Route path="/contact" element={<ContactForm />} />
-		//       <Route path="/project-details" element={<Proj_Details />} />
-		//       {/* Add other routes as needed */}
-		//     </Routes>
-		//     <Footer />
-		//   </div>
-		// </Router>
-	);
+              {/* Other components */}
+              <BGS onNavigate={navigateToProjDetails} />
+              {/* <Proj_Details /> */}
+              <ITeam />
+            </>
+          )}
+          {currentPage === "ContactUs" && (
+            <>
+              <ContactForm
+                onNavigate1={onNavigate1}
+                onNavigate={navigateToContactUs}
+              />
+            </>
+          )}
+          {currentPage === "ProjDetails" && (
+            <>
+              <Proj_Details
+                onNavigate1={onNavigate1}
+                onNavigate={navigateToContactUs}
+              />
+            </>
+          )}
+          <Parallexxx />
+          <Footer onNavigate={navigateToContactUs} />
+        </div>
+        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+      </QueryClientProvider>
+    </>
+    // <Router>
+    //   <div className="App">
+    //     <Header  isShrunk={isHeaderShrunk} />
+    //     <Routes>
+    //       <Route path="/home" element={<HomePage />} />
+    //       <Route path="/contact" element={<ContactForm />} />
+    //       <Route path="/project-details" element={<Proj_Details />} />
+    //       {/* Add other routes as needed */}
+    //     </Routes>
+    //     <Footer />
+    //   </div>
+    // </Router>
+  );
 }
 export default App;
