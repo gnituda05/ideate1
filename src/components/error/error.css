@@ -1,0 +1,78 @@
+.error-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background:
+    url('./icon/404 Page.png') center/cover no-repeat,
+    url('./icon/Ellipse 42.png') center/cover no-repeat; /* Multiple background images */
+  margin: 0;
+  padding: 0;
+}
+
+.eclipse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  width: 1000px; /* Adjust the width as a percentage of the viewport width */
+  height: 841px; /* Adjust the height as a percentage of the viewport height */
+  background: url('./icon/Ellipse 42.png') center/cover no-repeat;
+  margin: -5px; /* Adjust the negative margin */
+  padding: 0;
+  opacity: 0.7; /* Adjust the opacity as a percentage */
+}
+/* Media query for smaller screens (phones) */
+@media (max-width: 576px) {
+  .eclipse {
+    width: 100vw; /* Adjust the width for phones */
+    height: 180vw; /* Set height relative to the width */
+    max-width: none; /* Remove maximum width */
+    max-height: none; /* Remove maximum height */
+  }
+}
+
+/* Media query for medium screens (tablets) */
+@media (min-width: 577px) and (max-width: 1024px) {
+  .eclipse {
+    width: 100vw; /* Adjust the width for tablets */
+    height: 135vw; /* Set height relative to the width */
+    max-width: none; /* Remove maximum width */
+    max-height: none; /* Remove maximum height */
+  }
+}
+
+.error-message,
+.suggestion,
+.help-message {
+  margin: 5px; /* Adjust the margin as needed */
+  text-align: center;
+  color: white;
+  font-family: 'General Sans';                                              
+}
+
+.error-message {
+  font-size: 16rem; /* Adjust the size as needed */
+  font-weight: bold;
+  color: white;
+  font-weight: bold;
+}
+
+.suggestion {
+  font-size: 4rem;
+  color: #4169E1;
+  font-weight: bold;
+}
+
+.help-message {
+  color: white;
+  font-family: 'Lato';
+}
+
+.custom-heading {
+  line-height: 0.9; /* Adjust line-height as needed */
+}
+

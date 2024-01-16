@@ -2,6 +2,7 @@ import logo from "./icons/Black-Dominated.png";
 import Ilogo from "./icons/instagram.png";
 import Llogo from "./icons/linkedin.png";
 import Flogo from "./icons/facebook.png";
+import "./footer.css";
 import { MdArrowOutward } from "react-icons/md";
 
 interface FooterProps {
@@ -13,12 +14,14 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 		<div className=" bg-image-footer ">
 			<div className=" py-2 px-4 flex flex-col mx-auto max-w-screen-xl  gap-6 ">
 				<div className=" flex flex-col ">
-					<h1 className="text-5xl font-extrabold text-slate-900 lg:hidden">
+					<h1 className="text-5xl font-extrabold  text-slate-900 lg:hidden">
 						LETS MAKE
 					</h1>
 					<div className="flex flex-row gap-3 lg:hidden">
-						<h1 className="text-5xl font-extrabold text-slate-900">YOUR</h1>
-						<h1 className="text-5xl font-extrabold text- text-blue-600">
+						<h1 className="text-5xl font-extrabold font-general-sans text-slate-900">
+							YOUR
+						</h1>
+						<h1 className="text-5xl font-extrabold font-general-sans text-blue-600">
 							IDEAS
 						</h1>
 					</div>
@@ -46,20 +49,24 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 					<div className="hidden lg:block">
 						<div className=" flex flex-col ">
 							<div className="flex flex-row gap-3 ">
-								<h1 className="text-7xl font-extrabold text-slate-900 ">
+								<h1 className="text-7xl font-extrabold font-general-sans text-slate-900 ">
 									LETS MAKE
 								</h1>
-								<h1 className="text-7xl font-extrabold text-slate-900">YOUR</h1>
+								<h1 className="text-7xl font-extrabold font-general-sans text-slate-900">
+									YOUR
+								</h1>
 							</div>
 						</div>
 						<div className="flex flex-col justify-between  ">
 							<div className="flex lg: justify-between ">
 								<div className="flex gap-2 flex-row">
-									<h1 className="text-7xl font-extrabold text- text-blue-600">
+									<h1 className="text-7xl font-extrabold font-general-sans text-blue-600">
 										IDEAS
 									</h1>
-									<h1 className="text-7xl font-extrabold text-slate-900">TO</h1>
-									<h1 className="text-7xl font-extrabold text-lime-400">
+									<h1 className="text-7xl font-extrabold font-general-sans text-slate-900">
+										TO
+									</h1>
+									<h1 className="text-7xl font-extrabold font-general-sans text-lime-400">
 										LIFE
 									</h1>
 								</div>
@@ -84,34 +91,44 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
 				<div className="flex flex-col justify-center  items-center lg:hidden">
 					<img src={logo} alt="Logo" className="w-12" />
-					<p className="text-4xl font-bold mt-3"> ideate</p>
+					<p className="text-4xl font-bold font-general-sans mt-3"> ideate</p>
 
-					<p className="text font-bold ">hello@ideatesolutions.studio</p>
-					<p className="text font-bold text-right"> Davao City, PH 8000</p>
+					<p className="text font-bold font-lato ">
+						hello@ideatesolutions.studio
+					</p>
+					<p className="text font-bold font-lato text-right">
+						{" "}
+						Davao City, PH 8000
+					</p>
 					<div className="flex flex-row gap-2 mt-1">
 						<img src={Flogo} alt="Logo" className="h-5" />
 						<img src={Ilogo} alt="Logo" className="h-5" />
 						<img src={Llogo} alt="Logo" className="h-5" />
 					</div>
 					<div className="flex flex-row gap-2 mt-10">
-						<p className="text font ">@ideate 2021</p>
-						<p className="text font-medium ">CONTACT US</p>
+						<p className="text font font-lato ">@ideate 2021</p>
+						<p className="text font-medium font-lato ">CONTACT US</p>
 					</div>
 				</div>
 				<div className="hidden lg:flex flex-row justify-between">
 					<div className="flex flex-row gap-9 ">
 						<img src={logo} alt="Logo" className="h-16" />
-						<p className="text-4xl font-bold mt-3"> ideate</p>
+						<p className="text-4xl font-bold font-general-sans mt-3"> ideate</p>
 					</div>
 					<div>
-						<p className="text font-bold ">hello@ideatesolutions.studio</p>
-						<p className="text font-bold text-right"> Davao City, PH 8000</p>
+						<p className="text font-bold font-lato ">
+							hello@ideatesolutions.studio
+						</p>
+						<p className="text font-bold font-lato text-right">
+							{" "}
+							Davao City, PH 8000
+						</p>
 					</div>
 				</div>
 				<div className="hidden lg:flex flex-row justify-between">
 					<div className="flex flex-row gap-3">
-						<p className="text font ">@ideate 2021</p>
-						<p className="text font-medium ">CONTACT US</p>
+						<p className="text font font-lato ">@ideate 2021</p>
+						<p className="text font-medium font-lato ">CONTACT US</p>
 					</div>
 					<div className="flex flex-row gap-4">
 						{/* <img src={logo} alt="Logo" className="h-5" />
