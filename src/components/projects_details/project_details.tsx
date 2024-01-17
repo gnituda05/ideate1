@@ -86,22 +86,24 @@ const Proj_Details: React.FC<ContactUseProps> = ({
 					</div>
 				)}
 				<div className="flex flex-col mt-0 ">
-					<div className="flex flex-row justify-between">
-						<h2 className="text-5xl lg:text-7xl font-general-sans text-left font-bold text-white ">
-							WHERE DESIGN
-						</h2>
-					</div>
-					<div className="flex flex-row gap-5 ">
-						<h2 className="text-5xl lg:text-7xl font-general-sans txt-left font-bold text-white ">
-							MEETS
-						</h2>
-						<div className="flex flex-row">
-							<p className="text-5xl lg:text-7xl font-general-sans text-left font-bold text-blue-600 ">
-								TECH
-							</p>
-							<h2 className="text-5xl lg:text-7xl font-general-sans text-left font-bold text-lime-400 ">
-								.
+					<div className="lg:ms-7 ">
+						<div className="flex flex-row justify-between">
+							<h2 className="text-5xl lg:text-7xl font-general-sans text-left font-bold text-white ">
+								WHERE DESIGN
 							</h2>
+						</div>
+						<div className="flex flex-row gap-5 ">
+							<h2 className="text-5xl lg:text-7xl font-general-sans txt-left font-bold text-white ">
+								MEETS
+							</h2>
+							<div className="flex flex-row">
+								<p className="text-5xl lg:text-7xl font-general-sans text-left font-bold text-blue-600 ">
+									TECH
+								</p>
+								<h2 className="text-5xl lg:text-7xl font-general-sans text-left font-bold text-lime-400 ">
+									.
+								</h2>
+							</div>
 						</div>
 					</div>
 					<div className="flex flex-col gap-1 p-8 ">
