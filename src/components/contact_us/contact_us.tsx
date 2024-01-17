@@ -199,8 +199,8 @@ const ContactForm: React.FC<ContactUseProps> = ({
 				<div className="flex flex-col font-lato  w-full lg:gap-72 lg:flex-row ">
 					<div className="flex flex-col gap-1">
 						<p className="text-xl font-bold ">hello@idetasolutions.tech</p>
-						<p className="text-xl">09999999999 / 09111111111</p>
-						<p className="text-xl">(082) 123 1234</p>
+						<p className="text-xl">09178083327</p>
+						{/* <p className="text-xl">(082) 123 1234</p> */}
 					</div>
 
 					<div className="flex flex-col lg:mt-0">
@@ -253,15 +253,22 @@ const ContactForm: React.FC<ContactUseProps> = ({
 								</option>
 								<option
 									className="text-black cursor-pointer hover:bg-gray-300"
-									value="web-design"
+									value="Staff-Augmentation"
 								>
-									Web Design
+									Staff Augmentation
 								</option>
-								<option className="text-black" value="seo">
-									SEO
+								<option
+									className="text-black cursor-pointer hover:bg-gray-300"
+									value="Brand-Identity-Design"
+								>
+									Brand Identity Design
 								</option>
-								<option className="text-black" value="marketing">
-									Marketing
+								<option className="text-black" value="Software-Development">
+									Software Development
+								</option>
+
+								<option className="text-black" value="Others">
+									Others
 								</option>
 							</select>
 						</div>

@@ -41,7 +41,7 @@
   background-image: url("./images/bg.jpg") !important;
 }
 .bg-home {
-  background-image: url("./images/HeroBG.gif") !important;
+  background-image: url("./images/HeroBG1.gif") !important;
   background-repeat: no-repeat;
   background-size: cover; /* or contain, depending on what you need */
   background-position: center;

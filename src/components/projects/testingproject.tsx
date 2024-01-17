@@ -255,7 +255,7 @@ const BGS: React.FC<BGSProps> = ({ onNavigate }) => {
 													<p className="text-xs lg:text-base font-lato custom-paragraphMb lg:custom-paragraph  text-left leading-none">
 														With a meticulous approach to coding, rigorous
 														quality assurance, and user-centric mindset, we
-														deliver reliable and effiecient software
+														deliver reliable and efficient software
 														applications that drive an organization forward.
 													</p>
 												</div>
